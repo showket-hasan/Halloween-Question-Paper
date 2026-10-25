@@ -1,0 +1,1495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IELTS Academic Reading Examination — The Historical and Cultural Evolution of Halloween</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        academic: ['"Times New Roman"', 'Times', 'Georgia', 'serif'],
+                        sans: ['system-ui', '-apple-system', 'sans-serif'],
+                    },
+                    colors: {
+                        parchment: '#fcfbf8',
+                        ink: '#1c1b18',
+                        academicNavy: '#1b2a47',
+                        academicCrimson: '#7a1c1c',
+                        borderMuted: '#d5cfc1',
+                        accentGreen: '#235937',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Strict Academic Typography & Layout Formatting */
+        body {
+            font-family: "Times New Roman", Times, Georgia, serif;
+            color: #1c1b18;
+            background-color: #f7f5f0;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Custom Scrollbars */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #ede8dc;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #b5ad98;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #8e8570;
+        }
+
+        /* Formal Double Border utility */
+        .double-border-bottom {
+            border-bottom: 3px double #736b5e;
+        }
+        .double-border-box {
+            border: 3px double #736b5e;
+        }
+
+        /* Passage Highlighting styles */
+        .hl-yellow { background-color: #fef08a !important; color: #1e293b; }
+        .hl-green  { background-color: #bbf7d0 !important; color: #1e293b; }
+        .hl-blue   { background-color: #bae6fd !important; color: #1e293b; }
+
+        /* Printable test report styles */
+        @media print {
+            .no-print { display: none !important; }
+            body { background: #fff !important; color: #000 !important; }
+            .print-full { width: 100% !important; max-width: 100% !important; }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col font-academic text-ink selection:bg-amber-200 selection:text-ink">
+
+    <!-- TOP ACADEMIC HEADER -->
+    <header class="bg-[#242b35] text-stone-100 shadow-md border-b-2 border-[#151a22] no-print">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded border border-amber-300/40 flex items-center justify-center bg-stone-800 text-amber-200 font-bold text-lg tracking-widest shadow-inner">
+                        IELTS
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <span class="text-xs tracking-widest uppercase text-amber-300 font-semibold">Standard Academic Examination</span>
+                            <span class="text-[10px] bg-amber-950/70 border border-amber-400/30 text-amber-200 px-2 py-0.5 rounded">Confidential</span>
+                        </div>
+                        <h1 class="text-lg sm:text-xl font-bold tracking-wide text-white">Reading Module: Academic Module 1</h1>
+                    </div>
+                </div>
+
+                <!-- Timer & Session Utility -->
+                <div class="flex items-center justify-between md:justify-end gap-3 sm:gap-6 border-t md:border-t-0 pt-2 md:pt-0 border-stone-700">
+                    <!-- Progress meter -->
+                    <div class="flex items-center gap-2 text-stone-300 text-sm">
+                        <span class="hidden sm:inline">Answered:</span>
+                        <span id="answeredCounterBadge" class="bg-stone-800 px-2.5 py-1 rounded text-amber-300 font-mono font-bold border border-stone-600">0 / 20</span>
+                    </div>
+
+                    <!-- 25-minute test countdown timer -->
+                    <div class="flex items-center gap-2">
+                        <div class="text-right">
+                            <span class="text-[10px] uppercase tracking-wider block text-stone-400">Time Remaining</span>
+                            <div id="examTimer" class="font-mono text-2xl font-bold tracking-wider text-emerald-400 px-2 py-0.5 rounded bg-black/40 border border-stone-600">
+                                25:00
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Submission trigger -->
+                    <button id="btnSubmitTest" onclick="confirmSubmitModal()" class="bg-amber-600 hover:bg-amber-700 text-white font-bold px-4 py-2 rounded shadow transition flex items-center gap-2 border border-amber-500 text-sm">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <span>Submit Test</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN EXAM WORKSPACE (Split view) -->
+    <main id="examWorkspace" class="flex-1 max-w-7xl w-full mx-auto p-3 sm:p-5 flex flex-col lg:flex-row gap-5">
+        
+        <!-- LEFT COLUMN: READING PASSAGE & VISUAL TABLE -->
+        <section class="lg:w-1/2 flex flex-col bg-white border border-stone-300 shadow-md rounded-lg overflow-hidden">
+            <!-- Passage Toolbar -->
+            <div class="bg-[#f2efe9] px-4 py-2.5 border-b border-stone-300 flex items-center justify-between text-xs text-stone-700">
+                <div class="flex items-center gap-2">
+                    <span class="font-bold uppercase tracking-wider text-stone-900">Passage Controls:</span>
+                    <button onclick="changeFontSize(-1)" class="px-2 py-1 bg-stone-200 hover:bg-stone-300 rounded text-stone-800 font-bold" title="Decrease font size">A-</button>
+                    <button onclick="changeFontSize(1)" class="px-2 py-1 bg-stone-200 hover:bg-stone-300 rounded text-stone-800 font-bold" title="Increase font size">A+</button>
+                </div>
+                <div class="flex items-center gap-1.5">
+                    <span class="hidden sm:inline font-semibold">Highlight:</span>
+                    <button onclick="setHighlightColor('yellow')" class="w-5 h-5 rounded-full bg-yellow-300 border border-stone-400 hover:scale-110 transition" title="Yellow highlighter"></button>
+                    <button onclick="setHighlightColor('green')" class="w-5 h-5 rounded-full bg-emerald-300 border border-stone-400 hover:scale-110 transition" title="Green highlighter"></button>
+                    <button onclick="setHighlightColor('blue')" class="w-5 h-5 rounded-full bg-sky-300 border border-stone-400 hover:scale-110 transition" title="Blue highlighter"></button>
+                    <button onclick="clearHighlights()" class="text-[11px] underline text-stone-600 hover:text-stone-900 ml-1">Clear</button>
+                </div>
+            </div>
+
+            <!-- Passage Content Scrollable Area -->
+            <div id="passageContainer" class="p-5 sm:p-7 overflow-y-auto max-h-[75vh] lg:max-h-[82vh] text-[16px] leading-relaxed text-stone-900">
+                
+                <!-- Formal Document Heading -->
+                <div class="text-center mb-6 pb-4 border-b border-stone-300">
+                    <p class="text-xs tracking-widest text-stone-500 uppercase font-semibold">IELTS Academic Reading Practice Test</p>
+                    <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-stone-950 mt-1">The Historical and Cultural Evolution of Halloween</h2>
+                    <p class="text-xs text-stone-500 italic mt-1.5">Official Source Documentation & Text Analysis</p>
+                </div>
+
+                <!-- Instructions Banner Box -->
+                <div class="bg-[#faf8f3] border-2 border-stone-400 p-3.5 mb-6 rounded text-sm text-stone-800">
+                    <div class="font-bold uppercase tracking-wider text-xs mb-1 text-stone-900 flex items-center gap-1.5">
+                        <svg class="w-4 h-4 text-stone-700" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
+                        Reading Passage Instructions
+                    </div>
+                    <p class="italic">
+                        You should spend about <strong>20 minutes</strong> on <strong>Questions 1–20</strong>, which are based on the Reading Passage below. Answer all questions grounded strictly in the provided text.
+                    </p>
+                </div>
+
+                <!-- Paragraphs with Academic Section Tags -->
+                <article id="passageText" class="space-y-5 text-justify">
+                    <p id="para-A">
+                        <span class="inline-block bg-stone-800 text-amber-200 font-bold px-2 py-0.5 rounded text-xs mr-1 align-baseline select-none">Paragraph A</span>
+                        In contemporary North America, Halloween is widely recognized as a vibrant celebration characterized by elaborate disguises, social gatherings, and door-to-door trick-or-treating. For children, the highlight of October 31st consists of dressing up in imaginative attire—ranging from fairy-tale princesses to animals—and visiting neighborhood houses to collect complimentary candy by uttering the phrase 'trick or treat.' Adults frequently participate by hosting themed costume parties. However, beneath this modern surface of lighthearted entertainment lies a rich cultural lineage connected to ancient spiritual beliefs and cross-cultural rituals of ancestral remembrance, comparable in scope to Japan's Obon festival or Mexico's Day of the Dead (Día de los Muertos).
+                    </p>
+
+                    <p id="para-B">
+                        <span class="inline-block bg-stone-800 text-amber-200 font-bold px-2 py-0.5 rounded text-xs mr-1 align-baseline select-none">Paragraph B</span>
+                        The historical origin of Halloween traces back approximately 2,000 years to the ancient Celtic people, who inhabited regions comprising present-day Ireland, Scotland, and northern France. The Celts celebrated a festival known as Samhain (pronounced 'Sah-wvin'), marking All Hallows' Eve on October 31st. Celtic tradition held that on this specific night, the boundary separating the living from the deceased became porous, allowing spirits of the dead to return to Earth. While benevolent ancestral spirits were welcomed, harmful or evil entities were believed to roam the land as well. To safeguard their souls from being stolen or harmed by wandering evil spirits, the Celts wore disguises constructed from animal skins.
+                    </p>
+
+                    <p id="para-C">
+                        <span class="inline-block bg-stone-800 text-amber-200 font-bold px-2 py-0.5 rounded text-xs mr-1 align-baseline select-none">Paragraph C</span>
+                        Over subsequent centuries, the ancient practice of wearing animal skins evolved into the modern custom of wearing fancy dress costumes. Similarly, door-to-door trick-or-treating underwent a major historical shift. Following the Celtic period, a custom emerged wherein individuals visited nearby households to offer prayers for the deceased ancestors of the residents. In exchange for these spiritual prayers, wealthier hosts would distribute food to the visitors, particularly to poorer members of the community. In contemporary society, 'trick' signifies a practical joke or prank, while 'treat' refers to a sweet snack or confection. For modern children, the religious obligation has dissolved, leaving a popular ritual of receiving free treats.
+                    </p>
+
+                    <p id="para-D">
+                        <span class="inline-block bg-stone-800 text-amber-200 font-bold px-2 py-0.5 rounded text-xs mr-1 align-baseline select-none">Paragraph D</span>
+                        Another enduring emblem of Halloween is the Jack-O'-Lantern, a carved pumpkin illuminated from within. According to Celtic folklore, the term originates from a clever man named Jack who made a pact with the devil, selling his soul but later tricking the devil to avoid his fate. Upon his death, Jack was denied entry into heaven and condemned to wander the Earth in darkness. He was granted a single burning ember or coal from hellfire to light his path. Jack placed this glowing coal inside a hollowed-out turnip—a common root vegetable in Ireland and the United Kingdom. When Irish and British immigrants arrived in North America, turnips were scarce, prompting them to adapt the tradition by carving orange pumpkins, which were native and abundant in the New World.
+                    </p>
+
+                    <p id="para-E">
+                        <span class="inline-block bg-stone-800 text-amber-200 font-bold px-2 py-0.5 rounded text-xs mr-1 align-baseline select-none">Paragraph E</span>
+                        In addition to official Halloween festivities on October 31st, informal traditions have also surfaced. Among these is 'Devil's Night,' an unofficial observance taking place on October 30th, the evening prior to Halloween. Unconnected to ancient Celtic religion, Devil's Night traditionally involves youths engaging in light mischief and vandalism, such as draping toilet paper over buildings or smashing carved pumpkins. Despite these localized disruptions, Halloween remains every October 31st as a globally recognized event that blends ancient Celtic heritage, folk tales of Jack and his turnip lantern, and modern festive revelry.
+                    </p>
+                </article>
+
+                <!-- FIGURE 1: CONCEPTUAL SUMMARY DIAGRAM (RECONSTRUCTED VECTOR VISUAL) -->
+                <div class="my-8 p-4 bg-stone-50 rounded-lg border border-stone-300">
+                    <h3 class="text-center font-bold text-base sm:text-lg text-[#162747] mb-3">
+                        Historical Evolution of Key Halloween Symbols & Practices
+                    </h3>
+                    <div class="w-full overflow-x-auto py-2">
+                        <svg viewBox="0 0 880 340" class="w-full max-w-full h-auto drop-shadow-sm select-none" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                                    <path d="M 0 1 L 8 5 L 0 9 z" fill="#475569" />
+                                </marker>
+                            </defs>
+                            
+                            <!-- ROW 1: COSTUMES -->
+                            <!-- Box 1: Ancient Celtic -->
+                            <rect x="20" y="20" width="370" height="120" rx="16" fill="#fdf2f2" stroke="#ea868f" stroke-width="2"/>
+                            <text x="205" y="55" font-family="'Times New Roman', serif" font-size="19" font-weight="bold" fill="#881337" text-anchor="middle">Ancient Celtic (Samhain)</text>
+                            <text x="205" y="85" font-family="'Times New Roman', serif" font-size="14.5" fill="#1f2937" text-anchor="middle">Wore Animal Skins to hide</text>
+                            <text x="205" y="108" font-family="'Times New Roman', serif" font-size="14.5" fill="#1f2937" text-anchor="middle">from roaming evil spirits</text>
+
+                            <!-- Arrow 1 -->
+                            <line x1="390" y1="80" x2="480" y2="80" stroke="#475569" stroke-width="2.5" marker-end="url(#arrow)" />
+
+                            <!-- Box 2: Modern North America -->
+                            <rect x="490" y="20" width="370" height="120" rx="16" fill="#f0fdf4" stroke="#86efac" stroke-width="2"/>
+                            <text x="675" y="55" font-family="'Times New Roman', serif" font-size="19" font-weight="bold" fill="#14532d" text-anchor="middle">Modern North America</text>
+                            <text x="675" y="85" font-family="'Times New Roman', serif" font-size="14.5" fill="#1f2937" text-anchor="middle">Fun Costumes (Princesses, Animals)</text>
+                            <text x="675" y="108" font-family="'Times New Roman', serif" font-size="14.5" fill="#1f2937" text-anchor="middle">for Trick-or-Treating & Parties</text>
+
+                            <!-- ROW 2: JACK-O'-LANTERN -->
+                            <!-- Box 3: Folklore Ireland/UK -->
+                            <rect x="20" y="180" width="370" height="120" rx="16" fill="#fdf2f2" stroke="#ea868f" stroke-width="2"/>
+                            <text x="205" y="215" font-family="'Times New Roman', serif" font-size="19" font-weight="bold" fill="#881337" text-anchor="middle">Folklore (Ireland / UK)</text>
+                            <text x="205" y="245" font-family="'Times New Roman', serif" font-size="14.5" fill="#1f2937" text-anchor="middle">Glowing Coal inside a Turnip</text>
+                            <text x="205" y="268" font-family="'Times New Roman', serif" font-size="14.5" fill="#1f2937" text-anchor="middle">(Jack-O'-Lantern origin)</text>
+
+                            <!-- Arrow 2 -->
+                            <line x1="390" y1="240" x2="480" y2="240" stroke="#475569" stroke-width="2.5" marker-end="url(#arrow)" />
+
+                            <!-- Box 4: Immigrant Adaptation -->
+                            <rect x="490" y="180" width="370" height="120" rx="16" fill="#f0fdf4" stroke="#86efac" stroke-width="2"/>
+                            <text x="675" y="215" font-family="'Times New Roman', serif" font-size="19" font-weight="bold" fill="#14532d" text-anchor="middle">Immigrant Adaptation</text>
+                            <text x="675" y="245" font-family="'Times New Roman', serif" font-size="14.5" fill="#1f2937" text-anchor="middle">Carved Pumpkins (Abundant Fruit</text>
+                            <text x="675" y="268" font-family="'Times New Roman', serif" font-size="14.5" fill="#1f2937" text-anchor="middle">in North American soil)</text>
+                        </svg>
+                    </div>
+                    <p class="text-center text-xs italic text-stone-600 mt-2 font-medium">
+                        Figure 1: Conceptual Summary of Celtic Roots to Modern North American Traditions.
+                    </p>
+                </div>
+
+                <div class="border-t border-stone-300 pt-3 text-xs text-stone-500 flex justify-between">
+                    <span>Candidate Reading Reference: 4022-ACAD-RD</span>
+                    <span>End of Passage</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- RIGHT COLUMN: TEST QUESTIONS & ANSWER SHEET -->
+        <section class="lg:w-1/2 flex flex-col bg-white border border-stone-300 shadow-md rounded-lg overflow-hidden">
+            <!-- Questions Nav bar -->
+            <div class="bg-[#242b35] text-stone-200 px-4 py-2 border-b border-stone-800 flex items-center justify-between">
+                <span class="text-xs uppercase tracking-wider font-semibold text-amber-300">Question Booklet</span>
+                <span class="text-xs text-stone-300">Questions 1–20</span>
+            </div>
+
+            <!-- Quick Jump Grid -->
+            <div class="p-2.5 bg-stone-100 border-b border-stone-300 flex flex-wrap gap-1.5 justify-center items-center">
+                <span class="text-[11px] font-semibold text-stone-600 uppercase mr-1">Quick Jump:</span>
+                <!-- Generated 1 to 20 buttons -->
+                <div id="quickNavContainer" class="flex flex-wrap gap-1">
+                    <!-- Populated dynamically via JS -->
+                </div>
+            </div>
+
+            <!-- Scrollable Questions Form -->
+            <form id="examinationForm" onsubmit="event.preventDefault(); confirmSubmitModal();" class="p-5 sm:p-7 overflow-y-auto max-h-[70vh] lg:max-h-[76vh] space-y-8">
+                
+                <!-- SECTION 1: TRUE / FALSE / NOT GIVEN -->
+                <div class="border-b border-stone-300 pb-7">
+                    <div class="bg-[#fcfaf5] border-l-4 border-amber-600 p-3 mb-5">
+                        <h3 class="font-bold text-base text-stone-900 uppercase tracking-wide">Questions 1–5</h3>
+                        <p class="text-sm text-stone-700 italic">Do the following statements agree with the information given in the Reading Passage?</p>
+                        <div class="mt-2 text-xs space-y-1 bg-white p-2.5 rounded border border-stone-200 font-sans">
+                            <p><strong>TRUE</strong> &mdash; if the statement agrees with the information</p>
+                            <p><strong>FALSE</strong> &mdash; if the statement contradicts the information</p>
+                            <p><strong>NOT GIVEN</strong> &mdash; if there is no information on this</p>
+                        </div>
+                    </div>
+
+                    <!-- Question Items 1 to 5 -->
+                    <div class="space-y-5">
+                        <!-- Q1 -->
+                        <div class="q-card p-3 rounded hover:bg-stone-50 transition border border-transparent hover:border-stone-200" id="q-anchor-1">
+                            <div class="flex items-start gap-2.5">
+                                <span class="font-bold text-stone-800 text-sm">1.</span>
+                                <div class="flex-1">
+                                    <p class="text-stone-900 leading-snug">Ancient Celts wore disguises made of animal skins primarily to intimidate neighboring tribes.</p>
+                                    <div class="mt-2.5 flex flex-wrap gap-4 text-sm">
+                                        <label class="inline-flex items-center gap-1.5 cursor-pointer">
+                                            <input type="radio" name="q1" value="TRUE" onchange="markAnswered(1)" class="w-4 h-4 text-stone-800 accent-amber-600">
+                                            <span>TRUE</span>
+                                        </label>
+                                        <label class="inline-flex items-center gap-1.5 cursor-pointer">
+                                            <input type="radio" name="q1" value="FALSE" onchange="markAnswered(1)" class="w-4 h-4 text-stone-800 accent-amber-600">
+                                            <span>FALSE</span>
+                                        </label>
+                                        <label class="inline-flex items-center gap-1.5 cursor-pointer">
+                                            <input type="radio" name="q1" value="NOT GIVEN" onchange="markAnswered(1)" class="w-4 h-4 text-stone-800 accent-amber-600">
+                                            <span>NOT GIVEN</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Q2 -->
+                        <div class="q-card p-3 rounded hover:bg-stone-50 transition border border-transparent hover:border-stone-200" id="q-anchor-2">
+                            <div class="flex items-start gap-2.5">
+                                <span class="font-bold text-stone-800 text-sm">2.</span>
+                                <div class="flex-1">
+                                    <p class="text-stone-900 leading-snug">The ancient Celtic region during Samhain included areas of modern-day Scotland and France.</p>
+                                    <div class="mt-2.5 flex flex-wrap gap-4 text-sm">
+                                        <label class="inline-flex items-center gap-1.5 cursor-pointer">
+                                            <input type="radio" name="q2" value="TRUE" onchange="markAnswered(2)" class="w-4 h-4 text-stone-800 accent-amber-600">
+                                            <span>TRUE</span>
+                                        </label>
+                                        <label class="inline-flex items-center gap-1.5 cursor-pointer">
+                                            <input type="radio" name="q2" value="FALSE" onchange="markAnswered(2)" class="w-4 h-4 text-stone-800 accent-amber-600">
+                                            <span>FALSE</span>
+                                        </label>
+                                        <label class="inline-flex items-center gap-1.5 cursor-pointer">
+                                            <input type="radio" name="q2" value="NOT GIVEN" onchange="markAnswered(2)" class="w-4 h-4 text-stone-800 accent-amber-600">
+                                            <span>NOT GIVEN</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Q3 -->
+                        <div class="q-card p-3 rounded hover:bg-stone-50 transition border border-transparent hover:border-stone-200" id="q-anchor-3">
+                            <div class="flex items-start gap-2.5">
+                                <span class="font-bold text-stone-800 text-sm">3.</span>
+                                <div class="flex-1">
+                                    <p class="text-stone-900 leading-snug">Mexico's Day of the Dead is celebrated on the exact same date as modern Halloween.</p>
+                                    <div class="mt-2.5 flex flex-wrap gap-4 text-sm">
+                                        <label class="inline-flex items-center gap-1.5 cursor-pointer">
+                                            <input type="radio" name="q3" value="TRUE" onchange="markAnswered(3)" class="w-4 h-4 text-stone-800 accent-amber-600">
+                                            <span>TRUE</span>
+                                        </label>
+                                        <label class="inline-flex items-center gap-1.5 cursor-pointer">
+                                            <input type="radio" name="q3" value="FALSE" onchange="markAnswered(3)" class="w-4 h-4 text-stone-800 accent-amber-600">
+                                            <span>FALSE</span>
+                                        </label>
+                                        <label class="inline-flex items-center gap-1.5 cursor-pointer">
+                                            <input type="radio" name="q3" value="NOT GIVEN" onchange="markAnswered(3)" class="w-4 h-4 text-stone-800 accent-amber-600">
+                                            <span>NOT GIVEN</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Q4 -->
+                        <div class="q-card p-3 rounded hover:bg-stone-50 transition border border-transparent hover:border-stone-200" id="q-anchor-4">
+                            <div class="flex items-start gap-2.5">
+                                <span class="font-bold text-stone-800 text-sm">4.</span>
+                                <div class="flex-1">
+                                    <p class="text-stone-900 leading-snug">Jack was permitted into heaven after successfully deceiving the devil.</p>
+                                    <div class="mt-2.5 flex flex-wrap gap-4 text-sm">
+                                        <label class="inline-flex items-center gap-1.5 cursor-pointer">
+                                            <input type="radio" name="q4" value="TRUE" onchange="markAnswered(4)" class="w-4 h-4 text-stone-800 accent-amber-600">
+                                            <span>TRUE</span>
+                                        </label>
+                                        <label class="inline-flex items-center gap-1.5 cursor-pointer">
+                                            <input type="radio" name="q4" value="FALSE" onchange="markAnswered(4)" class="w-4 h-4 text-stone-800 accent-amber-600">
+                                            <span>FALSE</span>
+                                        </label>
+                                        <label class="inline-flex items-center gap-1.5 cursor-pointer">
+                                            <input type="radio" name="q4" value="NOT GIVEN" onchange="markAnswered(4)" class="w-4 h-4 text-stone-800 accent-amber-600">
+                                            <span>NOT GIVEN</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Q5 -->
+                        <div class="q-card p-3 rounded hover:bg-stone-50 transition border border-transparent hover:border-stone-200" id="q-anchor-5">
+                            <div class="flex items-start gap-2.5">
+                                <span class="font-bold text-stone-800 text-sm">5.</span>
+                                <div class="flex-1">
+                                    <p class="text-stone-900 leading-snug">European immigrants in North America substituted pumpkins for turnips because turnips were difficult to find.</p>
+                                    <div class="mt-2.5 flex flex-wrap gap-4 text-sm">
+                                        <label class="inline-flex items-center gap-1.5 cursor-pointer">
+                                            <input type="radio" name="q5" value="TRUE" onchange="markAnswered(5)" class="w-4 h-4 text-stone-800 accent-amber-600">
+                                            <span>TRUE</span>
+                                        </label>
+                                        <label class="inline-flex items-center gap-1.5 cursor-pointer">
+                                            <input type="radio" name="q5" value="FALSE" onchange="markAnswered(5)" class="w-4 h-4 text-stone-800 accent-amber-600">
+                                            <span>FALSE</span>
+                                        </label>
+                                        <label class="inline-flex items-center gap-1.5 cursor-pointer">
+                                            <input type="radio" name="q5" value="NOT GIVEN" onchange="markAnswered(5)" class="w-4 h-4 text-stone-800 accent-amber-600">
+                                            <span>NOT GIVEN</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECTION 2: MULTIPLE CHOICE -->
+                <div class="border-b border-stone-300 pb-7">
+                    <div class="bg-[#fcfaf5] border-l-4 border-amber-600 p-3 mb-5">
+                        <h3 class="font-bold text-base text-stone-900 uppercase tracking-wide">Questions 6–10</h3>
+                        <p class="text-sm text-stone-700 italic">Choose the correct letter, <strong>A, B, C, or D</strong>, for each question.</p>
+                    </div>
+
+                    <div class="space-y-6">
+                        <!-- Q6 -->
+                        <div class="q-card p-3 rounded hover:bg-stone-50 transition" id="q-anchor-6">
+                            <p class="font-bold text-sm text-stone-900 mb-2">6. According to Paragraph B, what was the primary belief behind celebrating Samhain on October 31st?</p>
+                            <div class="space-y-2 text-sm pl-2">
+                                <label class="flex items-start gap-2 cursor-pointer">
+                                    <input type="radio" name="q6" value="A" onchange="markAnswered(6)" class="mt-1 accent-amber-600">
+                                    <span><strong>A.</strong> It marked the start of the summer harvest.</span>
+                                </label>
+                                <label class="flex items-start gap-2 cursor-pointer">
+                                    <input type="radio" name="q6" value="B" onchange="markAnswered(6)" class="mt-1 accent-amber-600">
+                                    <span><strong>B.</strong> Spirits of the dead returned to Earth as the boundary thinned.</span>
+                                </label>
+                                <label class="flex items-start gap-2 cursor-pointer">
+                                    <input type="radio" name="q6" value="C" onchange="markAnswered(6)" class="mt-1 accent-amber-600">
+                                    <span><strong>C.</strong> Tribal leaders gathered to elect new monarchs.</span>
+                                </label>
+                                <label class="flex items-start gap-2 cursor-pointer">
+                                    <input type="radio" name="q6" value="D" onchange="markAnswered(6)" class="mt-1 accent-amber-600">
+                                    <span><strong>D.</strong> Evil spirits were permanently banished from Celtic lands.</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Q7 -->
+                        <div class="q-card p-3 rounded hover:bg-stone-50 transition" id="q-anchor-7">
+                            <p class="font-bold text-sm text-stone-900 mb-2">7. Historically, how did door-to-door trick-or-treating originate after the Celtic period?</p>
+                            <div class="space-y-2 text-sm pl-2">
+                                <label class="flex items-start gap-2 cursor-pointer">
+                                    <input type="radio" name="q7" value="A" onchange="markAnswered(7)" class="mt-1 accent-amber-600">
+                                    <span><strong>A.</strong> Children performed comedy acts in exchange for coins.</span>
+                                </label>
+                                <label class="flex items-start gap-2 cursor-pointer">
+                                    <input type="radio" name="q7" value="B" onchange="markAnswered(7)" class="mt-1 accent-amber-600">
+                                    <span><strong>B.</strong> Wealthy citizens forced poor neighbors to clean their property.</span>
+                                </label>
+                                <label class="flex items-start gap-2 cursor-pointer">
+                                    <input type="radio" name="q7" value="C" onchange="markAnswered(7)" class="mt-1 accent-amber-600">
+                                    <span><strong>C.</strong> Visitors offered prayers for household ancestors in exchange for food.</span>
+                                </label>
+                                <label class="flex items-start gap-2 cursor-pointer">
+                                    <input type="radio" name="q7" value="D" onchange="markAnswered(7)" class="mt-1 accent-amber-600">
+                                    <span><strong>D.</strong> Local priests distributed sweet treats to promote religious holidays.</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Q8 -->
+                        <div class="q-card p-3 rounded hover:bg-stone-50 transition" id="q-anchor-8">
+                            <p class="font-bold text-sm text-stone-900 mb-2">8. What object did Jack originally place his burning coal inside?</p>
+                            <div class="space-y-2 text-sm pl-2">
+                                <label class="flex items-start gap-2 cursor-pointer">
+                                    <input type="radio" name="q8" value="A" onchange="markAnswered(8)" class="mt-1 accent-amber-600">
+                                    <span><strong>A.</strong> A carved orange pumpkin</span>
+                                </label>
+                                <label class="flex items-start gap-2 cursor-pointer">
+                                    <input type="radio" name="q8" value="B" onchange="markAnswered(8)" class="mt-1 accent-amber-600">
+                                    <span><strong>B.</strong> A hollowed-out turnip</span>
+                                </label>
+                                <label class="flex items-start gap-2 cursor-pointer">
+                                    <input type="radio" name="q8" value="C" onchange="markAnswered(8)" class="mt-1 accent-amber-600">
+                                    <span><strong>C.</strong> A metallic oil lamp</span>
+                                </label>
+                                <label class="flex items-start gap-2 cursor-pointer">
+                                    <input type="radio" name="q8" value="D" onchange="markAnswered(8)" class="mt-1 accent-amber-600">
+                                    <span><strong>D.</strong> An animal skin pouch</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Q9 -->
+                        <div class="q-card p-3 rounded hover:bg-stone-50 transition" id="q-anchor-9">
+                            <p class="font-bold text-sm text-stone-900 mb-2">9. Why did immigrants in North America start using pumpkins for Jack-O'-Lanterns?</p>
+                            <div class="space-y-2 text-sm pl-2">
+                                <label class="flex items-start gap-2 cursor-pointer">
+                                    <input type="radio" name="q9" value="A" onchange="markAnswered(9)" class="mt-1 accent-amber-600">
+                                    <span><strong>A.</strong> Pumpkins were native and plentiful in North America.</span>
+                                </label>
+                                <label class="flex items-start gap-2 cursor-pointer">
+                                    <input type="radio" name="q9" value="B" onchange="markAnswered(9)" class="mt-1 accent-amber-600">
+                                    <span><strong>B.</strong> Pumpkins were easier to hollow out than metal lamps.</span>
+                                </label>
+                                <label class="flex items-start gap-2 cursor-pointer">
+                                    <input type="radio" name="q9" value="C" onchange="markAnswered(9)" class="mt-1 accent-amber-600">
+                                    <span><strong>C.</strong> Turnips were forbidden by North American religious laws.</span>
+                                </label>
+                                <label class="flex items-start gap-2 cursor-pointer">
+                                    <input type="radio" name="q9" value="D" onchange="markAnswered(9)" class="mt-1 accent-amber-600">
+                                    <span><strong>D.</strong> The devil instructed Jack to use orange fruits.</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Q10 -->
+                        <div class="q-card p-3 rounded hover:bg-stone-50 transition" id="q-anchor-10">
+                            <p class="font-bold text-sm text-stone-900 mb-2">10. When does the informal observance known as 'Devil's Night' take place?</p>
+                            <div class="space-y-2 text-sm pl-2">
+                                <label class="flex items-start gap-2 cursor-pointer">
+                                    <input type="radio" name="q10" value="A" onchange="markAnswered(10)" class="mt-1 accent-amber-600">
+                                    <span><strong>A.</strong> On the night of October 31st</span>
+                                </label>
+                                <label class="flex items-start gap-2 cursor-pointer">
+                                    <input type="radio" name="q10" value="B" onchange="markAnswered(10)" class="mt-1 accent-amber-600">
+                                    <span><strong>B.</strong> On October 30th, the night before Halloween</span>
+                                </label>
+                                <label class="flex items-start gap-2 cursor-pointer">
+                                    <input type="radio" name="q10" value="C" onchange="markAnswered(10)" class="mt-1 accent-amber-600">
+                                    <span><strong>C.</strong> On the first morning of November</span>
+                                </label>
+                                <label class="flex items-start gap-2 cursor-pointer">
+                                    <input type="radio" name="q10" value="D" onchange="markAnswered(10)" class="mt-1 accent-amber-600">
+                                    <span><strong>D.</strong> Exactly 2,000 years after Samhain</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECTION 3: MATCHING INFORMATION -->
+                <div class="border-b border-stone-300 pb-7">
+                    <div class="bg-[#fcfaf5] border-l-4 border-amber-600 p-3 mb-5">
+                        <h3 class="font-bold text-base text-stone-900 uppercase tracking-wide">Questions 11–15</h3>
+                        <p class="text-sm text-stone-700 italic">Which paragraph (<strong>A–E</strong>) contains the following information?</p>
+                        <p class="text-xs text-stone-500 mt-1"><em>NB: You may use any letter more than once.</em></p>
+                    </div>
+
+                    <div class="space-y-4">
+                        <!-- Q11 -->
+                        <div class="q-card p-3 rounded hover:bg-stone-50 flex flex-col sm:flex-row sm:items-center justify-between gap-3" id="q-anchor-11">
+                            <span class="text-sm text-stone-900 leading-snug"><strong>11.</strong> A description of unauthorized mischief and pumpkin smashing prior to Halloween night.</span>
+                            <select name="q11" onchange="markAnswered(11)" class="w-28 border border-stone-400 bg-white rounded px-2.5 py-1.5 text-sm font-semibold focus:ring-1 focus:ring-amber-500 outline-none">
+                                <option value="">Select</option>
+                                <option value="A">Paragraph A</option>
+                                <option value="B">Paragraph B</option>
+                                <option value="C">Paragraph C</option>
+                                <option value="D">Paragraph D</option>
+                                <option value="E">Paragraph E</option>
+                            </select>
+                        </div>
+
+                        <!-- Q12 -->
+                        <div class="q-card p-3 rounded hover:bg-stone-50 flex flex-col sm:flex-row sm:items-center justify-between gap-3" id="q-anchor-12">
+                            <span class="text-sm text-stone-900 leading-snug"><strong>12.</strong> A comparison between Halloween and ancestral reverence festivals in Japan and Mexico.</span>
+                            <select name="q12" onchange="markAnswered(12)" class="w-28 border border-stone-400 bg-white rounded px-2.5 py-1.5 text-sm font-semibold focus:ring-1 focus:ring-amber-500 outline-none">
+                                <option value="">Select</option>
+                                <option value="A">Paragraph A</option>
+                                <option value="B">Paragraph B</option>
+                                <option value="C">Paragraph C</option>
+                                <option value="D">Paragraph D</option>
+                                <option value="E">Paragraph E</option>
+                            </select>
+                        </div>
+
+                        <!-- Q13 -->
+                        <div class="q-card p-3 rounded hover:bg-stone-50 flex flex-col sm:flex-row sm:items-center justify-between gap-3" id="q-anchor-13">
+                            <span class="text-sm text-stone-900 leading-snug"><strong>13.</strong> The story of a man who tricked the devil and was condemned to wander with a coal.</span>
+                            <select name="q13" onchange="markAnswered(13)" class="w-28 border border-stone-400 bg-white rounded px-2.5 py-1.5 text-sm font-semibold focus:ring-1 focus:ring-amber-500 outline-none">
+                                <option value="">Select</option>
+                                <option value="A">Paragraph A</option>
+                                <option value="B">Paragraph B</option>
+                                <option value="C">Paragraph C</option>
+                                <option value="D">Paragraph D</option>
+                                <option value="E">Paragraph E</option>
+                            </select>
+                        </div>
+
+                        <!-- Q14 -->
+                        <div class="q-card p-3 rounded hover:bg-stone-50 flex flex-col sm:flex-row sm:items-center justify-between gap-3" id="q-anchor-14">
+                            <span class="text-sm text-stone-900 leading-snug"><strong>14.</strong> An explanation of how prayers for deceased ancestors were exchanged for food rewards.</span>
+                            <select name="q14" onchange="markAnswered(14)" class="w-28 border border-stone-400 bg-white rounded px-2.5 py-1.5 text-sm font-semibold focus:ring-1 focus:ring-amber-500 outline-none">
+                                <option value="">Select</option>
+                                <option value="A">Paragraph A</option>
+                                <option value="B">Paragraph B</option>
+                                <option value="C">Paragraph C</option>
+                                <option value="D">Paragraph D</option>
+                                <option value="E">Paragraph E</option>
+                            </select>
+                        </div>
+
+                        <!-- Q15 -->
+                        <div class="q-card p-3 rounded hover:bg-stone-50 flex flex-col sm:flex-row sm:items-center justify-between gap-3" id="q-anchor-15">
+                            <span class="text-sm text-stone-900 leading-snug"><strong>15.</strong> The phonetic pronunciation and ancient geographic origin of Samhain.</span>
+                            <select name="q15" onchange="markAnswered(15)" class="w-28 border border-stone-400 bg-white rounded px-2.5 py-1.5 text-sm font-semibold focus:ring-1 focus:ring-amber-500 outline-none">
+                                <option value="">Select</option>
+                                <option value="A">Paragraph A</option>
+                                <option value="B">Paragraph B</option>
+                                <option value="C">Paragraph C</option>
+                                <option value="D">Paragraph D</option>
+                                <option value="E">Paragraph E</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECTION 4: SUMMARY COMPLETION -->
+                <div>
+                    <div class="bg-[#fcfaf5] border-l-4 border-amber-600 p-3 mb-5">
+                        <h3 class="font-bold text-base text-stone-900 uppercase tracking-wide">Questions 16–20</h3>
+                        <p class="text-sm text-stone-700 italic">Complete the summary below.</p>
+                        <p class="text-xs text-amber-900 font-bold mt-1 bg-amber-100/70 inline-block px-2 py-0.5 rounded">
+                            Choose NO MORE THAN TWO WORDS from the passage for each answer.
+                        </p>
+                    </div>
+
+                    <!-- Summary Box in Academic Table/Frame -->
+                    <div class="bg-stone-50 border-2 border-stone-300 p-4 sm:p-6 rounded-md shadow-inner text-[15px] leading-loose text-stone-900">
+                        <h4 class="text-center font-bold text-base text-stone-900 mb-4 pb-2 border-b border-stone-300 uppercase tracking-wider">
+                            Evolution of Halloween Traditions
+                        </h4>
+                        
+                        <p>
+                            Ancient Celts celebrated Samhain 2,000 years ago, believing that evil spirits roamed the Earth. To protect their souls, they wore disguises made of 
+                            <span class="inline-block mx-1">
+                                <strong>(16)</strong>
+                                <input type="text" name="q16" id="input-q16" oninput="markAnswered(16)" placeholder="answer..." class="border-b-2 border-stone-500 bg-white px-2 py-0.5 text-sm focus:border-amber-600 focus:outline-none w-36 text-center font-semibold text-stone-900">
+                            </span>.
+                            Centuries later, individuals visited homes to offer prayers for deceased ancestors in return for 
+                            <span class="inline-block mx-1">
+                                <strong>(17)</strong>
+                                <input type="text" name="q17" id="input-q17" oninput="markAnswered(17)" placeholder="answer..." class="border-b-2 border-stone-500 bg-white px-2 py-0.5 text-sm focus:border-amber-600 focus:outline-none w-36 text-center font-semibold text-stone-900">
+                            </span> 
+                            distributed by wealthier hosts. In folklore, Jack illuminated his dark path using a glowing coal contained inside a carved 
+                            <span class="inline-block mx-1">
+                                <strong>(18)</strong>
+                                <input type="text" name="q18" id="input-q18" oninput="markAnswered(18)" placeholder="answer..." class="border-b-2 border-stone-500 bg-white px-2 py-0.5 text-sm focus:border-amber-600 focus:outline-none w-36 text-center font-semibold text-stone-900">
+                            </span>. 
+                            Upon migrating to North America, immigrants adapted this practice by using native 
+                            <span class="inline-block mx-1">
+                                <strong>(19)</strong>
+                                <input type="text" name="q19" id="input-q19" oninput="markAnswered(19)" placeholder="answer..." class="border-b-2 border-stone-500 bg-white px-2 py-0.5 text-sm focus:border-amber-600 focus:outline-none w-36 text-center font-semibold text-stone-900">
+                            </span> 
+                            instead. Finally, on the day before Halloween, some youths participate in 
+                            <span class="inline-block mx-1">
+                                <strong>(20)</strong>
+                                <input type="text" name="q20" id="input-q20" oninput="markAnswered(20)" placeholder="answer..." class="border-b-2 border-stone-500 bg-white px-2 py-0.5 text-sm focus:border-amber-600 focus:outline-none w-36 text-center font-semibold text-stone-900">
+                            </span>, 
+                            engaging in minor mischief such as toilet-papering buildings.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="pt-4 flex justify-end">
+                    <button type="button" onclick="confirmSubmitModal()" class="w-full sm:w-auto bg-[#242b35] hover:bg-[#191e25] text-amber-200 hover:text-amber-100 font-bold px-8 py-3 rounded shadow-md border border-stone-700 transition">
+                        Finish & Generate Diagnostic Assessment Report
+                    </button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <!-- CUSTOM SUBMISSION CONFIRMATION MODAL (No alert()) -->
+    <div id="confirmModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg max-w-md w-full p-6 shadow-2xl border-2 border-stone-300">
+            <h3 class="text-xl font-bold text-stone-900 border-b border-stone-200 pb-2">Confirm Test Submission</h3>
+            <p id="confirmModalMessage" class="text-stone-700 text-sm mt-3 leading-relaxed">
+                You are about to conclude your examination and view your official performance report.
+            </p>
+            <div id="unansweredWarning" class="mt-3 p-3 bg-amber-50 border border-amber-300 rounded text-xs text-amber-900 hidden">
+                <strong>Attention:</strong> You have unanswered questions remaining. You can still return to complete them before the 25-minute timer expires.
+            </div>
+            <div class="mt-6 flex justify-end gap-3">
+                <button onclick="closeModal('confirmModal')" class="px-4 py-2 border border-stone-300 rounded text-stone-700 hover:bg-stone-100 text-sm">
+                    Return to Exam
+                </button>
+                <button onclick="gradeAndRenderReport()" class="px-5 py-2 bg-amber-600 hover:bg-amber-700 text-white font-bold rounded shadow text-sm">
+                    Submit & Grade Now
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- TIME-UP MODAL (Triggers automatically at 00:00) -->
+    <div id="timeUpModal" class="fixed inset-0 bg-black/75 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg max-w-md w-full p-6 shadow-2xl border-2 border-red-700 text-center">
+            <div class="w-12 h-12 mx-auto rounded-full bg-red-100 text-red-700 flex items-center justify-center mb-3">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            </div>
+            <h3 class="text-xl font-bold text-red-900">Time Has Expired!</h3>
+            <p class="text-stone-700 text-sm mt-2">
+                The 25-minute test duration has concluded. In accordance with examination regulations, your responses will now be recorded and evaluated.
+            </p>
+            <div class="mt-6">
+                <button onclick="closeModal('timeUpModal'); gradeAndRenderReport();" class="w-full px-5 py-2.5 bg-red-800 hover:bg-red-900 text-white font-bold rounded shadow text-sm">
+                    View Automated Performance Report
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- POST-TEST COMPREHENSIVE GRADING REPORT MODAL / FULL VIEW -->
+    <div id="reportModal" class="fixed inset-0 bg-[#161a22]/80 backdrop-blur-sm z-50 hidden overflow-y-auto p-3 sm:p-6">
+        <div class="bg-white rounded-lg max-w-5xl mx-auto p-5 sm:p-9 shadow-2xl border-4 border-double border-stone-400 my-6">
+            
+            <!-- Report Header -->
+            <div class="border-b-2 border-stone-800 pb-5 mb-6 text-center">
+                <div class="flex items-center justify-center gap-2 mb-1">
+                    <span class="w-3 h-3 bg-amber-600 rounded-full"></span>
+                    <span class="text-xs uppercase font-bold tracking-widest text-stone-500">IELTS Academic Diagnostic System</span>
+                    <span class="w-3 h-3 bg-amber-600 rounded-full"></span>
+                </div>
+                <h2 class="text-2xl sm:text-4xl font-bold text-stone-900 uppercase tracking-tight">Examination Performance & Diagnostic Analysis</h2>
+                <p class="text-stone-600 italic text-sm mt-1">Passage: The Historical and Cultural Evolution of Halloween</p>
+                
+                <div class="flex flex-wrap justify-center gap-4 text-xs text-stone-600 mt-3 font-mono">
+                    <span>Date: <span id="reportDate" class="font-bold text-stone-900"></span></span>
+                    <span>|</span>
+                    <span>Time Elapsed: <span id="reportTimeSpent" class="font-bold text-stone-900"></span></span>
+                    <span>|</span>
+                    <span>Evaluation Protocol: Band 1.0 – 9.0 Descriptor</span>
+                </div>
+            </div>
+
+            <!-- Score Summary Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
+                <!-- Raw Score -->
+                <div class="bg-[#faf8f3] border-2 border-stone-300 p-4 rounded text-center">
+                    <span class="text-xs uppercase font-semibold text-stone-500 tracking-wider">Raw Score</span>
+                    <div class="text-3xl sm:text-4xl font-bold text-stone-900 my-1 font-mono" id="reportRawScore">0 / 20</div>
+                    <span class="text-xs text-stone-600" id="reportPercentage">0% Accuracy</span>
+                </div>
+
+                <!-- IELTS Band Score Equivalent -->
+                <div class="bg-[#f0f5fa] border-2 border-[#1e3a5f] p-4 rounded text-center">
+                    <span class="text-xs uppercase font-semibold text-[#1e3a5f] tracking-wider">Estimated Band</span>
+                    <div class="text-3xl sm:text-4xl font-bold text-[#1e3a5f] my-1 font-mono" id="reportBandScore">Band 0.0</div>
+                    <span class="text-xs font-semibold text-stone-700" id="reportBandLevel">Pending</span>
+                </div>
+
+                <!-- Time Spent -->
+                <div class="bg-[#faf8f3] border-2 border-stone-300 p-4 rounded text-center">
+                    <span class="text-xs uppercase font-semibold text-stone-500 tracking-wider">Time Duration</span>
+                    <div class="text-2xl sm:text-3xl font-bold text-stone-800 my-1 font-mono" id="reportTimeDisplay">25:00</div>
+                    <span class="text-xs text-stone-600">Allotted: 25 minutes</span>
+                </div>
+
+                <!-- Reading Mastery Status -->
+                <div class="bg-[#faf8f3] border-2 border-stone-300 p-4 rounded text-center">
+                    <span class="text-xs uppercase font-semibold text-stone-500 tracking-wider">Competency Level</span>
+                    <div class="text-xl sm:text-2xl font-bold text-stone-900 my-2" id="reportCompetencyText">Analysis</div>
+                    <span class="text-xs px-2 py-0.5 rounded font-mono font-bold" id="reportCompetencyBadge">Proficient</span>
+                </div>
+            </div>
+
+            <!-- Task Breakdown Progress Bars -->
+            <div class="mb-8 bg-stone-50 p-5 rounded-lg border border-stone-300">
+                <h3 class="font-bold text-base text-stone-900 uppercase tracking-wide mb-3 border-b border-stone-200 pb-1">
+                    Question Type Diagnostic Profiling
+                </h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-sans">
+                    <!-- TFNG -->
+                    <div>
+                        <div class="flex justify-between font-semibold mb-1">
+                            <span>True / False / Not Given (Q1–5)</span>
+                            <span id="scoreTypeTFNG" class="font-mono">0/5</span>
+                        </div>
+                        <div class="w-full bg-stone-200 rounded-full h-2.5 overflow-hidden">
+                            <div id="barTFNG" class="bg-amber-600 h-2.5 rounded-full" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    <!-- MCQ -->
+                    <div>
+                        <div class="flex justify-between font-semibold mb-1">
+                            <span>Multiple Choice (Q6–10)</span>
+                            <span id="scoreTypeMCQ" class="font-mono">0/5</span>
+                        </div>
+                        <div class="w-full bg-stone-200 rounded-full h-2.5 overflow-hidden">
+                            <div id="barMCQ" class="bg-emerald-600 h-2.5 rounded-full" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    <!-- Matching -->
+                    <div>
+                        <div class="flex justify-between font-semibold mb-1">
+                            <span>Paragraph Matching (Q11–15)</span>
+                            <span id="scoreTypeMatch" class="font-mono">0/5</span>
+                        </div>
+                        <div class="w-full bg-stone-200 rounded-full h-2.5 overflow-hidden">
+                            <div id="barMatch" class="bg-sky-600 h-2.5 rounded-full" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    <!-- Summary -->
+                    <div>
+                        <div class="flex justify-between font-semibold mb-1">
+                            <span>Summary Completion (Q16–20)</span>
+                            <span id="scoreTypeSummary" class="font-mono">0/5</span>
+                        </div>
+                        <div class="w-full bg-stone-200 rounded-full h-2.5 overflow-hidden">
+                            <div id="barSummary" class="bg-indigo-600 h-2.5 rounded-full" style="width: 0%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Strengths, Weaknesses, and Remediation Table -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-8">
+                <!-- Identified Strengths -->
+                <div class="bg-emerald-50/70 border border-emerald-300 p-4 rounded-lg">
+                    <h4 class="font-bold text-emerald-950 flex items-center gap-1.5 text-sm uppercase tracking-wider mb-2">
+                        <svg class="w-4 h-4 text-emerald-700" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                        Demonstrated Strengths
+                    </h4>
+                    <ul id="reportStrengthsList" class="text-xs text-stone-800 space-y-1.5 list-disc pl-4 leading-relaxed">
+                        <!-- Injected via JS -->
+                    </ul>
+                </div>
+
+                <!-- Identified Weaknesses & Distractor Traps -->
+                <div class="bg-rose-50/70 border border-rose-300 p-4 rounded-lg">
+                    <h4 class="font-bold text-rose-950 flex items-center gap-1.5 text-sm uppercase tracking-wider mb-2">
+                        <svg class="w-4 h-4 text-rose-700" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path></svg>
+                        Identified Weaknesses & Traps
+                    </h4>
+                    <ul id="reportWeaknessesList" class="text-xs text-stone-800 space-y-1.5 list-disc pl-4 leading-relaxed">
+                        <!-- Injected via JS -->
+                    </ul>
+                </div>
+
+                <!-- Remediation & Actionable Improvement Plan -->
+                <div class="bg-amber-50/70 border border-amber-300 p-4 rounded-lg">
+                    <h4 class="font-bold text-amber-950 flex items-center gap-1.5 text-sm uppercase tracking-wider mb-2">
+                        <svg class="w-4 h-4 text-amber-700" fill="currentColor" viewBox="0 0 20 20"><path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a10.99 10.99 0 00-.25 2.274c0 3.337 2.008 6.096 4.908 6.643a1 1 0 00.384 0c2.9-.547 4.908-3.306 4.908-6.643 0-.78-.088-1.543-.25-2.274l2.644-1.131a1 1 0 000-1.84l-7-3zM6.75 12a4.5 4.5 0 019 0 4.5 4.5 0 01-9 0z"></path></svg>
+                        Actionable Next Steps
+                    </h4>
+                    <ul id="reportImprovementList" class="text-xs text-stone-800 space-y-1.5 list-disc pl-4 leading-relaxed">
+                        <!-- Injected via JS -->
+                    </ul>
+                </div>
+            </div>
+
+            <!-- DETAILED QUESTION-BY-QUESTION AUDIT TABLE -->
+            <div class="mb-6">
+                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 mb-3">
+                    <h3 class="font-bold text-base text-stone-900 uppercase tracking-wide">
+                        Detailed Item Breakdown & Academic Evidence
+                    </h3>
+                    <div class="flex items-center gap-2 text-xs font-sans">
+                        <span class="font-medium">Filter Items:</span>
+                        <button onclick="filterReportTable('all')" class="px-2.5 py-1 bg-stone-200 hover:bg-stone-300 rounded font-bold" id="filterBtnAll">All (20)</button>
+                        <button onclick="filterReportTable('incorrect')" class="px-2.5 py-1 bg-rose-100 text-rose-800 hover:bg-rose-200 rounded font-bold" id="filterBtnIncorrect">Errors Only</button>
+                        <button onclick="filterReportTable('correct')" class="px-2.5 py-1 bg-emerald-100 text-emerald-800 hover:bg-emerald-200 rounded font-bold" id="filterBtnCorrect">Correct Only</button>
+                    </div>
+                </div>
+
+                <div class="overflow-x-auto border border-stone-300 rounded shadow-sm">
+                    <table class="w-full text-left text-xs sm:text-sm border-collapse bg-white">
+                        <thead class="bg-[#242b35] text-stone-100 uppercase tracking-wider font-semibold text-[11px]">
+                            <tr>
+                                <th class="p-2.5 border-r border-stone-600 text-center w-12">Q#</th>
+                                <th class="p-2.5 border-r border-stone-600 text-center w-28">Your Answer</th>
+                                <th class="p-2.5 border-r border-stone-600 text-center w-28">Key</th>
+                                <th class="p-2.5 border-r border-stone-600 text-center w-20">Status</th>
+                                <th class="p-2.5 border-r border-stone-600 text-center w-24">Location</th>
+                                <th class="p-2.5">Text Evidence & Academic Explanation</th>
+                            </tr>
+                        </thead>
+                        <tbody id="detailedReportTableBody" class="divide-y divide-stone-200">
+                            <!-- Populated dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Modal Action Buttons -->
+            <div class="flex flex-wrap justify-end gap-3 pt-4 border-t border-stone-300 no-print">
+                <button onclick="window.print()" class="px-5 py-2.5 border border-stone-400 bg-stone-100 hover:bg-stone-200 rounded text-stone-800 font-bold text-xs uppercase tracking-wider flex items-center gap-1.5 shadow-sm">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+                    Print Report / Save PDF
+                </button>
+                <button onclick="closeModal('reportModal')" class="px-6 py-2.5 bg-[#242b35] hover:bg-[#181d24] text-white rounded font-bold text-xs uppercase tracking-wider shadow">
+                    Close & Review Test Layout
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT ENGINE -->
+    <script>
+        /* MASTER ANSWER KEY & EXPLANATIONS DATA SOURCE */
+        const EXAM_DATA = [
+            {
+                q: 1,
+                type: "TFNG",
+                category: "Factual Verification",
+                key: "FALSE",
+                location: "Paragraph B",
+                explanation: "Celts wore disguises constructed from animal skins to safeguard their souls from wandering evil spirits, not to intimidate neighboring tribes."
+            },
+            {
+                q: 2,
+                type: "TFNG",
+                category: "Factual Verification",
+                key: "TRUE",
+                location: "Paragraph B",
+                explanation: "The passage explicitly identifies that Celtic lands encompassed regions comprising present-day Ireland, Scotland, and northern France."
+            },
+            {
+                q: 3,
+                type: "TFNG",
+                category: "Factual Verification",
+                key: "NOT GIVEN",
+                location: "Paragraph A",
+                explanation: "Paragraph A draws a cultural comparison between Halloween and Mexico's Day of the Dead (ancestral remembrance), but does not state the exact calendar date of the Mexican celebration."
+            },
+            {
+                q: 4,
+                type: "TFNG",
+                category: "Factual Verification",
+                key: "FALSE",
+                location: "Paragraph D",
+                explanation: "Upon his death, Jack was explicitly denied entry into heaven and condemned to wander the Earth in darkness."
+            },
+            {
+                q: 5,
+                type: "TFNG",
+                category: "Factual Verification",
+                key: "TRUE",
+                location: "Paragraph D",
+                explanation: "When Irish and British immigrants arrived in North America, turnips were scarce, prompting them to adapt by using native orange pumpkins."
+            },
+            {
+                q: 6,
+                type: "MCQ",
+                category: "Detail Comprehension",
+                key: "B",
+                location: "Paragraph B",
+                explanation: "Paragraph B states that on October 31st, Celtic tradition held that the boundary separating the living from the deceased became porous, allowing spirits to return to Earth."
+            },
+            {
+                q: 7,
+                type: "MCQ",
+                category: "Detail Comprehension",
+                key: "C",
+                location: "Paragraph C",
+                explanation: "Following the Celtic period, individuals visited nearby households to offer prayers for deceased ancestors; in exchange, wealthier hosts distributed food."
+            },
+            {
+                q: 8,
+                type: "MCQ",
+                category: "Detail Comprehension",
+                key: "B",
+                location: "Paragraph D",
+                explanation: "Jack was granted a burning coal from hellfire and placed it inside a hollowed-out turnip—a common vegetable in Ireland and the UK."
+            },
+            {
+                q: 9,
+                type: "MCQ",
+                category: "Detail Comprehension",
+                key: "A",
+                location: "Paragraph D",
+                explanation: "European immigrants transitioned to pumpkins because turnips were scarce while pumpkins were native and abundant in the New World."
+            },
+            {
+                q: 10,
+                type: "MCQ",
+                category: "Detail Comprehension",
+                key: "B",
+                location: "Paragraph E",
+                explanation: "Devil's Night is documented as an unofficial observance taking place on October 30th, the evening prior to Halloween."
+            },
+            {
+                q: 11,
+                type: "MATCH",
+                category: "Scanning & Structure",
+                key: "E",
+                location: "Paragraph E",
+                explanation: "Paragraph E details youths engaging in light mischief and vandalism, such as toilet-papering buildings and smashing carved pumpkins."
+            },
+            {
+                q: 12,
+                type: "MATCH",
+                category: "Scanning & Structure",
+                key: "A",
+                location: "Paragraph A",
+                explanation: "Paragraph A compares modern Halloween to ancestral remembrance traditions like Japan's Obon festival and Mexico's Day of the Dead."
+            },
+            {
+                q: 13,
+                type: "MATCH",
+                category: "Scanning & Structure",
+                key: "D",
+                location: "Paragraph D",
+                explanation: "Paragraph D recounts the folklore of clever Jack, his pact with the devil, his denial into heaven, and his wandering with a burning coal."
+            },
+            {
+                q: 14,
+                type: "MATCH",
+                category: "Scanning & Structure",
+                key: "C",
+                location: "Paragraph C",
+                explanation: "Paragraph C elaborates on the custom of offering prayers for deceased household ancestors in exchange for food donated by wealthier hosts."
+            },
+            {
+                q: 15,
+                type: "MATCH",
+                category: "Scanning & Structure",
+                key: "B",
+                location: "Paragraph B",
+                explanation: "Paragraph B introduces Samhain, its pronunciation ('Sah-wvin'), and its Celtic origins across Ireland, Scotland, and northern France."
+            },
+            {
+                q: 16,
+                type: "SUMMARY",
+                category: "Lexical Retrieval",
+                key: "animal skins",
+                location: "Paragraph B",
+                accepted: ["animal skins", "animal skin"],
+                explanation: "To safeguard their souls, Celts wore disguises constructed from 'animal skins'."
+            },
+            {
+                q: 17,
+                type: "SUMMARY",
+                category: "Lexical Retrieval",
+                key: "food",
+                location: "Paragraph C",
+                accepted: ["food"],
+                explanation: "Wealthier hosts distributed 'food' in exchange for spiritual prayers offered for their ancestors."
+            },
+            {
+                q: 18,
+                type: "SUMMARY",
+                category: "Lexical Retrieval",
+                key: "turnip",
+                location: "Paragraph D",
+                accepted: ["turnip", "turnips"],
+                explanation: "Jack placed his glowing coal inside a hollowed-out 'turnip'."
+            },
+            {
+                q: 19,
+                type: "SUMMARY",
+                category: "Lexical Retrieval",
+                key: "pumpkins",
+                location: "Paragraph D",
+                accepted: ["pumpkins", "orange pumpkins", "pumpkin"],
+                explanation: "Immigrants adapted the tradition by carving native orange 'pumpkins'."
+            },
+            {
+                q: 20,
+                type: "SUMMARY",
+                category: "Lexical Retrieval",
+                key: "Devil's Night",
+                location: "Paragraph E",
+                accepted: ["devil's night", "devils night", "devil’s night", "devil night"],
+                explanation: "On October 30th, youths participate in 'Devil's Night', committing minor mischief."
+            }
+        ];
+
+        /* STATE VARIABLES */
+        let totalSeconds = 25 * 60; // 25 Minutes
+        let timerInterval = null;
+        let testSubmitted = false;
+        let userAnswers = {};
+        let activeHighlightColor = 'yellow';
+        let currentPassageFontSize = 16;
+        let reportDataCache = null;
+
+        /* INITIALIZATION */
+        window.addEventListener('DOMContentLoaded', () => {
+            initQuickNav();
+            startTimer();
+            setCurrentDateDisplay();
+        });
+
+        /* QUICK JUMP NAVIGATION BAR CREATOR */
+        function initQuickNav() {
+            const container = document.getElementById('quickNavContainer');
+            container.innerHTML = '';
+            for (let i = 1; i <= 20; i++) {
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.id = `nav-btn-${i}`;
+                btn.innerText = i;
+                btn.className = 'w-7 h-7 text-xs font-mono font-bold rounded border border-stone-300 bg-white text-stone-700 hover:bg-stone-200 transition flex items-center justify-center';
+                btn.onclick = () => scrollToQuestion(i);
+                container.appendChild(btn);
+            }
+        }
+
+        function scrollToQuestion(qNum) {
+            const target = document.getElementById(`q-anchor-${qNum}`);
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                target.classList.add('bg-amber-100');
+                setTimeout(() => target.classList.remove('bg-amber-100'), 1200);
+            }
+        }
+
+        /* TRACK ANSWERED QUESTIONS */
+        function markAnswered(qNum) {
+            const navBtn = document.getElementById(`nav-btn-${qNum}`);
+            if (navBtn) {
+                navBtn.classList.remove('bg-white', 'text-stone-700');
+                navBtn.classList.add('bg-amber-600', 'text-white', 'border-amber-700');
+            }
+            updateAnsweredBadge();
+        }
+
+        function updateAnsweredBadge() {
+            let count = 0;
+            // 1 to 5 radio
+            for (let i = 1; i <= 5; i++) {
+                if (document.querySelector(`input[name="q${i}"]:checked`)) count++;
+            }
+            // 6 to 10 radio
+            for (let i = 6; i <= 10; i++) {
+                if (document.querySelector(`input[name="q${i}"]:checked`)) count++;
+            }
+            // 11 to 15 select
+            for (let i = 11; i <= 15; i++) {
+                const sel = document.querySelector(`select[name="q${i}"]`);
+                if (sel && sel.value !== "") count++;
+            }
+            // 16 to 20 text
+            for (let i = 16; i <= 20; i++) {
+                const inp = document.querySelector(`input[name="q${i}"]`);
+                if (inp && inp.value.trim().length > 0) count++;
+            }
+
+            document.getElementById('answeredCounterBadge').innerText = `${count} / 20`;
+        }
+
+        /* 25-MINUTE COUNTDOWN TIMER */
+        function startTimer() {
+            const timerEl = document.getElementById('examTimer');
+            timerInterval = setInterval(() => {
+                if (totalSeconds <= 0) {
+                    clearInterval(timerInterval);
+                    timerEl.innerText = "00:00";
+                    timerEl.classList.remove('text-emerald-400');
+                    timerEl.classList.add('text-red-500', 'animate-pulse');
+                    onTimeExpired();
+                    return;
+                }
+
+                totalSeconds--;
+                const minutes = Math.floor(totalSeconds / 60);
+                const seconds = totalSeconds % 60;
+                timerEl.innerText = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+
+                // Color shifts when under 5 minutes and 1 minute
+                if (totalSeconds <= 300 && totalSeconds > 60) {
+                    timerEl.classList.remove('text-emerald-400');
+                    timerEl.classList.add('text-amber-400');
+                } else if (totalSeconds <= 60) {
+                    timerEl.classList.remove('text-amber-400');
+                    timerEl.classList.add('text-red-400', 'animate-pulse');
+                }
+            }, 1000);
+        }
+
+        function onTimeExpired() {
+            if (testSubmitted) return;
+            document.getElementById('timeUpModal').classList.remove('hidden');
+        }
+
+        /* SUBMISSION CONFIRMATION MODAL */
+        function confirmSubmitModal() {
+            if (testSubmitted) {
+                openModal('reportModal');
+                return;
+            }
+
+            // Check if there are unanswered questions
+            let count = 0;
+            for (let i = 1; i <= 10; i++) {
+                if (document.querySelector(`input[name="q${i}"]:checked`)) count++;
+            }
+            for (let i = 11; i <= 15; i++) {
+                if (document.querySelector(`select[name="q${i}"]`)?.value !== "") count++;
+            }
+            for (let i = 16; i <= 20; i++) {
+                if (document.querySelector(`input[name="q${i}"]`)?.value.trim().length > 0) count++;
+            }
+
+            const warningEl = document.getElementById('unansweredWarning');
+            if (count < 20) {
+                warningEl.classList.remove('hidden');
+                warningEl.innerHTML = `<strong>Attention:</strong> You have only answered <strong>${count} of 20</strong> questions. Unanswered items will receive 0 marks.`;
+            } else {
+                warningEl.classList.add('hidden');
+            }
+
+            openModal('confirmModal');
+        }
+
+        function openModal(id) {
+            document.getElementById(id).classList.remove('hidden');
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).classList.add('hidden');
+        }
+
+        /* HARVEST USER RESPONSES */
+        function harvestAnswers() {
+            const answers = {};
+            // Radios 1-10
+            for (let i = 1; i <= 10; i++) {
+                const sel = document.querySelector(`input[name="q${i}"]:checked`);
+                answers[i] = sel ? sel.value.trim() : "";
+            }
+            // Selects 11-15
+            for (let i = 11; i <= 15; i++) {
+                const sel = document.querySelector(`select[name="q${i}"]`);
+                answers[i] = sel ? sel.value.trim() : "";
+            }
+            // Summary text 16-20
+            for (let i = 16; i <= 20; i++) {
+                const inp = document.querySelector(`input[name="q${i}"]`);
+                answers[i] = inp ? inp.value.trim() : "";
+            }
+            return answers;
+        }
+
+        /* NORMALIZATION FOR SUMMARY ANSWERS */
+        function normalizeSummary(str) {
+            return str.toLowerCase().replace(/['’]/g, "'").replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"").trim();
+        }
+
+        /* AUTOMATED GRADING & DIAGNOSTIC REPORT ENGINE */
+        function gradeAndRenderReport() {
+            closeModal('confirmModal');
+            closeModal('timeUpModal');
+            clearInterval(timerInterval);
+            testSubmitted = true;
+
+            const timeSpentSeconds = (25 * 60) - Math.max(totalSeconds, 0);
+            const spentMin = Math.floor(timeSpentSeconds / 60);
+            const spentSec = timeSpentSeconds % 60;
+            const timeFormatted = `${spentMin} min ${spentSec} sec`;
+
+            userAnswers = harvestAnswers();
+
+            let scoreTotal = 0;
+            let catScores = {
+                TFNG: { correct: 0, total: 5 },
+                MCQ: { correct: 0, total: 5 },
+                MATCH: { correct: 0, total: 5 },
+                SUMMARY: { correct: 0, total: 5 }
+            };
+
+            const auditRows = [];
+
+            EXAM_DATA.forEach(item => {
+                const userVal = userAnswers[item.q] || "";
+                let isCorrect = false;
+
+                if (item.type === "SUMMARY") {
+                    const normUser = normalizeSummary(userVal);
+                    const normKey = normalizeSummary(item.key);
+                    const acceptedList = item.accepted.map(a => normalizeSummary(a));
+                    isCorrect = normUser === normKey || acceptedList.includes(normUser);
+                } else {
+                    isCorrect = userVal.toUpperCase() === item.key.toUpperCase();
+                }
+
+                if (isCorrect) {
+                    scoreTotal++;
+                    catScores[item.type].correct++;
+                }
+
+                auditRows.push({
+                    ...item,
+                    userVal: userVal === "" ? "(Blank)" : userVal,
+                    isCorrect: isCorrect
+                });
+            });
+
+            // Band Score Calculation
+            const bandScore = calculateBandScore(scoreTotal);
+
+            // Populate Report Metrics
+            document.getElementById('reportRawScore').innerText = `${scoreTotal} / 20`;
+            document.getElementById('reportPercentage').innerText = `${Math.round((scoreTotal / 20) * 100)}% Overall Accuracy`;
+            document.getElementById('reportBandScore').innerText = `Band ${bandScore.score.toFixed(1)}`;
+            document.getElementById('reportBandLevel').innerText = bandScore.descriptor;
+            document.getElementById('reportTimeSpent').innerText = timeFormatted;
+            document.getElementById('reportTimeDisplay').innerText = timeFormatted;
+            document.getElementById('reportCompetencyText').innerText = bandScore.descriptor;
+            
+            const badgeEl = document.getElementById('reportCompetencyBadge');
+            badgeEl.innerText = bandScore.badge;
+            badgeEl.className = `text-xs px-2.5 py-0.5 rounded font-mono font-bold ${bandScore.badgeColor}`;
+
+            // Category progress bars
+            updateCategoryBar('scoreTypeTFNG', 'barTFNG', catScores.TFNG.correct, 5);
+            updateCategoryBar('scoreTypeMCQ', 'barMCQ', catScores.MCQ.correct, 5);
+            updateCategoryBar('scoreTypeMatch', 'barMatch', catScores.MATCH.correct, 5);
+            updateCategoryBar('scoreTypeSummary', 'barSummary', catScores.SUMMARY.correct, 5);
+
+            // Generate Qualitative Feedback
+            generateDiagnosticFeedback(catScores, auditRows);
+
+            // Render Audit Table
+            reportDataCache = auditRows;
+            renderAuditTable('all');
+
+            // Show Report Modal
+            openModal('reportModal');
+        }
+
+        /* IELTS BAND SCORE CONVERTER (Scaled for 20-item Reading subtest) */
+        function calculateBandScore(raw) {
+            if (raw >= 19) return { score: 9.0, descriptor: "Expert User", badge: "IELTS Band 9.0", badgeColor: "bg-emerald-100 text-emerald-800" };
+            if (raw >= 17) return { score: 8.5, descriptor: "Very Good User", badge: "IELTS Band 8.5", badgeColor: "bg-emerald-100 text-emerald-800" };
+            if (raw >= 15) return { score: 8.0, descriptor: "Very Good User", badge: "IELTS Band 8.0", badgeColor: "bg-teal-100 text-teal-800" };
+            if (raw >= 13) return { score: 7.5, descriptor: "Good User", badge: "IELTS Band 7.5", badgeColor: "bg-teal-100 text-teal-800" };
+            if (raw >= 11) return { score: 7.0, descriptor: "Good User", badge: "IELTS Band 7.0", badgeColor: "bg-sky-100 text-sky-800" };
+            if (raw >= 9)  return { score: 6.5, descriptor: "Competent User", badge: "IELTS Band 6.5", badgeColor: "bg-amber-100 text-amber-800" };
+            if (raw >= 7)  return { score: 6.0, descriptor: "Competent User", badge: "IELTS Band 6.0", badgeColor: "bg-amber-100 text-amber-800" };
+            if (raw >= 5)  return { score: 5.5, descriptor: "Modest User", badge: "IELTS Band 5.5", badgeColor: "bg-orange-100 text-orange-800" };
+            if (raw >= 3)  return { score: 5.0, descriptor: "Modest User", badge: "IELTS Band 5.0", badgeColor: "bg-orange-100 text-orange-800" };
+            return { score: 4.0, descriptor: "Limited User", badge: "IELTS Band 4.0", badgeColor: "bg-rose-100 text-rose-800" };
+        }
+
+        function updateCategoryBar(textId, barId, score, max) {
+            const pct = Math.round((score / max) * 100);
+            document.getElementById(textId).innerText = `${score}/${max} (${pct}%)`;
+            document.getElementById(barId).style.width = `${pct}%`;
+        }
+
+        /* QUALITATIVE STRENGTHS & WEAKNESSES GENERATOR */
+        function generateDiagnosticFeedback(catScores, auditRows) {
+            const strengthsList = document.getElementById('reportStrengthsList');
+            const weaknessesList = document.getElementById('reportWeaknessesList');
+            const improvementList = document.getElementById('reportImprovementList');
+
+            strengthsList.innerHTML = '';
+            weaknessesList.innerHTML = '';
+            improvementList.innerHTML = '';
+
+            // Strengths
+            if (catScores.TFNG.correct >= 4) {
+                appendList(strengthsList, "High precision in factual verification (True/False/Not Given); effectively separates explicitly stated evidence from absence of text verification.");
+            }
+            if (catScores.MCQ.correct >= 4) {
+                appendList(strengthsList, "Strong analytical comprehension of multiple-choice questions; resists distractor traps and identifies core historical timelines.");
+            }
+            if (catScores.MATCH.correct >= 4) {
+                appendList(strengthsList, "Excellent paragraph scanning capability; accurately associates topical themes with their corresponding textual locations.");
+            }
+            if (catScores.SUMMARY.correct >= 4) {
+                appendList(strengthsList, "Superior lexical retrieval and morphological accuracy in summary completion, adhering strictly to word count bounds.");
+            }
+            if (strengthsList.children.length === 0) {
+                appendList(strengthsList, "Demonstrated foundational familiarity with the reading passage and attempted all primary section layouts.");
+            }
+
+            // Weaknesses
+            if (catScores.TFNG.correct < 3) {
+                appendList(weaknessesList, "Vulnerability to FALSE vs NOT GIVEN distinctions (e.g., verifying whether an exact date is missing versus explicitly contradicted).");
+            }
+            if (catScores.MCQ.correct < 3) {
+                appendList(weaknessesList, "Susceptibility to plausible distractors; verify exact historical agents (e.g., priests vs wealthy hosts; turnips vs pumpkins).");
+            }
+            if (catScores.MATCH.correct < 3) {
+                appendList(weaknessesList, "Paragraph matching shows confusion between similar thematic paragraphs (e.g., Celtic origins in Paragraph B vs later adaptations in Paragraph C).");
+            }
+            if (catScores.SUMMARY.correct < 3) {
+                appendList(weaknessesList, "Vocabulary extraction gaps: Ensure extracted phrases are copied verbatim from the text (e.g., 'animal skins', 'food', 'turnip') without introducing outside synonyms.");
+            }
+            if (weaknessesList.children.length === 0) {
+                appendList(weaknessesList, "Minor lapses in speed or edge-case scanning under examination time pressure.");
+            }
+
+            // Improvement Recommendations
+            appendList(improvementList, "<strong>T/F/NG Strategy:</strong> Remember that if the passage merely compares two cultural festivals (e.g., Day of the Dead) without specifying their shared date, mark 'NOT GIVEN' rather than inferring or assuming real-world facts.");
+            appendList(improvementList, "<strong>Verbatim Word Retrieval:</strong> When completing summaries with 'NO MORE THAN TWO WORDS', never rephrase or mutate pluralities (e.g., use 'pumpkins' and 'animal skins' directly from the passage context).");
+            appendList(improvementList, "<strong>Scanning for Keywords:</strong> Utilize capitalizations and distinctive nouns ('Samhain', 'Devil's Night', 'Jack-O'-Lantern') as quick locator anchors before reading surrounding sentences in depth.");
+        }
+
+        function appendList(parent, text) {
+            const li = document.createElement('li');
+            li.innerHTML = text;
+            parent.appendChild(li);
+        }
+
+        /* AUDIT TABLE RENDERING WITH FILTERS */
+        function filterReportTable(mode) {
+            document.getElementById('filterBtnAll').className = mode === 'all' ? 'px-2.5 py-1 bg-stone-800 text-white rounded font-bold' : 'px-2.5 py-1 bg-stone-200 hover:bg-stone-300 rounded font-bold';
+            document.getElementById('filterBtnIncorrect').className = mode === 'incorrect' ? 'px-2.5 py-1 bg-rose-700 text-white rounded font-bold' : 'px-2.5 py-1 bg-rose-100 text-rose-800 hover:bg-rose-200 rounded font-bold';
+            document.getElementById('filterBtnCorrect').className = mode === 'correct' ? 'px-2.5 py-1 bg-emerald-700 text-white rounded font-bold' : 'px-2.5 py-1 bg-emerald-100 text-emerald-800 hover:bg-emerald-200 rounded font-bold';
+            renderAuditTable(mode);
+        }
+
+        function renderAuditTable(filter) {
+            const tbody = document.getElementById('detailedReportTableBody');
+            tbody.innerHTML = '';
+
+            reportDataCache.forEach(item => {
+                if (filter === 'correct' && !item.isCorrect) return;
+                if (filter === 'incorrect' && item.isCorrect) return;
+
+                const tr = document.createElement('tr');
+                tr.className = item.isCorrect ? 'hover:bg-emerald-50/50' : 'hover:bg-rose-50/50 bg-rose-50/20';
+
+                const statusBadge = item.isCorrect 
+                    ? '<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-300">✓ Correct</span>'
+                    : '<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-bold bg-rose-100 text-rose-800 border border-rose-300">✗ Incorrect</span>';
+
+                tr.innerHTML = `
+                    <td class="p-2.5 text-center font-bold font-mono border-r border-stone-200">${item.q}</td>
+                    <td class="p-2.5 text-center font-mono font-semibold border-r border-stone-200 ${item.isCorrect ? 'text-emerald-800' : 'text-rose-700 font-bold'}">${escapeHtml(item.userVal)}</td>
+                    <td class="p-2.5 text-center font-mono font-bold text-stone-900 border-r border-stone-200 bg-stone-50/70">${escapeHtml(item.key)}</td>
+                    <td class="p-2.5 text-center border-r border-stone-200">${statusBadge}</td>
+                    <td class="p-2.5 text-center text-xs font-semibold text-stone-600 border-r border-stone-200 whitespace-nowrap">${item.location}</td>
+                    <td class="p-2.5 text-xs text-stone-700 leading-relaxed">${item.explanation}</td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        function escapeHtml(str) {
+            if (!str) return '';
+            return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+        }
+
+        /* TEXT HIGHLIGHTER ENGINE */
+        function setHighlightColor(color) {
+            activeHighlightColor = color;
+            applySelectionHighlight();
+        }
+
+        function applySelectionHighlight() {
+            const selection = window.getSelection();
+            if (!selection.rangeCount) return;
+            const range = selection.getRangeAt(0);
+
+            // Verify selection belongs inside the passage text
+            const passageEl = document.getElementById('passageText');
+            if (!passageEl.contains(range.commonAncestorContainer)) return;
+
+            if (range.toString().trim().length === 0) return;
+
+            const span = document.createElement('span');
+            span.className = `hl-${activeHighlightColor} px-0.5 rounded cursor-pointer`;
+            span.title = "Click to remove highlight";
+            span.onclick = function() {
+                const parent = this.parentNode;
+                while (this.firstChild) parent.insertBefore(this.firstChild, this);
+                parent.removeChild(this);
+            };
+
+            try {
+                range.surroundContents(span);
+                selection.removeAllRanges();
+            } catch (e) {
+                // Ignore cross-boundary selections
+            }
+        }
+
+        document.getElementById('passageContainer').addEventListener('mouseup', () => {
+            const sel = window.getSelection();
+            if (sel && sel.toString().trim().length > 1) {
+                applySelectionHighlight();
+            }
+        });
+
+        function clearHighlights() {
+            const highlighted = document.querySelectorAll('#passageText span[class*="hl-"]');
+            highlighted.forEach(el => {
+                const parent = el.parentNode;
+                while (el.firstChild) parent.insertBefore(el.firstChild, el);
+                parent.removeChild(el);
+            });
+        }
+
+        /* FONT SIZE CONTROLLER */
+        function changeFontSize(delta) {
+            currentPassageFontSize = Math.min(Math.max(currentPassageFontSize + delta, 14), 22);
+            document.getElementById('passageContainer').style.fontSize = `${currentPassageFontSize}px`;
+        }
+
+        function setCurrentDateDisplay() {
+            const today = new Date();
+            const formatted = today.toLocaleDateString('en-GB', {
+                day: 'numeric',
+                month: 'long',
+                year: 'numeric'
+            });
+            document.getElementById('reportDate').innerText = formatted;
+        }
+    </script>
+</body>
+</html>
